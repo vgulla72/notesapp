@@ -7,6 +7,8 @@ const YellowButton = ({ text, onClick }) => {
         padding: '10px 20px',
         cursor: 'pointer',
         fontSize: '16px',
+        display: 'block',
+        margin: '0 auto',
     };
 
     return (
