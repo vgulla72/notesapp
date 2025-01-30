@@ -1,34 +1,16 @@
-import React, { useState } from 'react';
-import { APIProvider, Map, Marker } from '@vis.gl/react-google-maps';
-import PlacesAutocomplete from 'react-places-autocomplete';
+import reactLogo from "./assets/react.svg";
+import "./App.css";
 
-function MapComponent() {
-  const [center, setCenter] = useState({ lat: 40.7128, lng: -74.0060 });
-
-  const handlePlaceSelect = (place) => {
-    setCenter({
-      lat: place.geometry.location.lat(),
-      lng: place.geometry.location.lng(),
-    });
-  };
-
+function App() {
   return (
-    <div>
-      <PlacesAutocomplete
-        onSelect={handlePlaceSelect}
-      />
-      <APIProvider apiKey="YOUR_GOOGLE_MAPS_API_KEY">
-        <Map
-          center={center}
-          zoom={12}
-          mapId="YOUR_MAP_ID"
-          gestureHandling="greedy" 
-        >
-          <Marker position={center} />
-        </Map>
-      </APIProvider>
+    <div className="App">
+      <header className="App-header">
+        <img src={reactLogo} className="logo react" alt="React logo" />
+
+        <h1>Hello from Mickey Amplify</h1>
+      </header>
     </div>
   );
 }
 
-export default MapComponent;
+export default App;
